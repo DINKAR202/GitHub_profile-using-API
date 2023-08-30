@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
+import { FcApproval } from "react-icons/fc";
+
 
 const UseEffectAPI = () => {
   const [users, setUsers] = useState([]);
 
   const getUsers = async () => {
-    const response = await fetch("https://jsonplaceholder.typicode.com/photos");
+    const response = await fetch("https://jsonplaceholder.typicode.com/todos");
     console.log(response);
     setUsers(await response.json());
   };
@@ -24,10 +26,10 @@ const UseEffectAPI = () => {
                 <div className="card p-2">
                   <div className="d-flex align-items-center">
                     <div className="image">
-                      <img src={curElem.url} className="rounded" width="155" />
+                      <img src=" " className="rounded" width="155" />
                     </div>
                     <div className="ml-3 w-100">
-                      <h4 className="mb-0 mt-0 textLeft">Dinkar</h4>
+                      <h4 className="mb-0 mt-0 textLeft">Dinkar <FcApproval /></h4>
                       <span className="textLeft">{curElem.title}</span>
                       <div className="p-2 mt-2 bg-primary d-flex justify-content-between rounded text-white stats">
                         <div className="d-flex flex-column">
